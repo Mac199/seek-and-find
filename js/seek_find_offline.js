@@ -40,7 +40,7 @@ function sendReportToServer(score,scenario,time_remaining,time,time_bonus){
     let userID = localInfo.TTInfoDictionary.TTInfo[1][1];
     $.post("https://gsk.mc3tt.com/tabletop/activities/addactivitycompetition/", 
             { 
-                activity_id: 124,
+                activity_id: 182,
                 user_id: userID,
                 event_id: eventID,       
                 score: score,

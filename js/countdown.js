@@ -35,6 +35,7 @@ function congrats(interval, seconds){
     $point = $("#point").text();
     $("#app").css('background-image',"url('images/congrats.png')");
     $('#resource .page, .resource').remove();
+    $("#resource").css("display","none");
     $("#final_point").html($point).css('display','inherit');
     $("#correct_count").css('display','inherit');
     $("#total").css("display","inherit");
@@ -42,6 +43,7 @@ function congrats(interval, seconds){
     $("#time_bonus").css("display","inherit");
     $("#time_remaining").html($("#timer").text());
     localStorage.setItem("time_remaining",$("#timer").text());
+
     $("footer").html("<div class='play_again_footer'><img src='images/Buttons/play_again.png' class='play_again'></div>").css("display","inherit");
     if(seconds>0){
       $("#time_bonus").html(seconds*100);
@@ -64,9 +66,9 @@ function congrats(interval, seconds){
     $("#time_bonus").empty();
     $("#questions").empty();
     $(this).remove();
-    $("#timer").text("4:00");
+    $("#timer").text("10:00");
     $("#point").empty();
     $("#point").text("0");
-    $("#question_counter span").text("0");
+    // $("#question_counter span").text("0");
     play_again = true;
   })

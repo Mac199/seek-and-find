@@ -10,7 +10,7 @@ $(document).ready(function(){
   $laucn.on("touchstart",function(){
     $laucn.css("background-image","url(images/pi_launch_down.png)");
   }).on("touchend", function(){
-
+    $("#resource").css("display",'inherit');
     $point = $("#point");
     $("#app").css('background-image',"url('images/Select_Resource.png')");
     $(".grow").css("display","none");
@@ -22,7 +22,7 @@ $(document).ready(function(){
     scenario_collect.push(scenario);
     correct_count = 0;
     $("#questions").html(activityJSON["question"+scenario]['question']);
-    $("#question_counter span").html(scenario_collect.length);
+    //$("#question_counter span").html(scenario_collect.length);
     points = 0;
     });
 
@@ -352,16 +352,16 @@ $(document).ready(function(){
   }).on("touchend", ".load_next_scenario", function(){
        
 
-       scenario = Math.floor((Math.random() * 10) + 1);
+       scenario = Math.floor((Math.random() * 15) + 1);
        while( $.inArray(scenario, scenario_collect) !=-1 ){
-        scenario = Math.floor((Math.random() * 10) + 1);
+        scenario = Math.floor((Math.random() * 15) + 1);
        }
 
        scenario_collect.push(scenario);
 
        $(".resource").removeClass("correct");
        localStorage.setItem("scenario", scenario);
-       $("#question_counter span").html(scenario_collect.length);
+      // $("#question_counter span").html(scenario_collect.length);
        $("#questions").html(activityJSON['question'+scenario]["question"]);
        $footer.css('display', 'none');
        $("#resource .page").remove();

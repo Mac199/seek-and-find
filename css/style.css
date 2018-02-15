@@ -1,5 +1,7 @@
 * {
   font-family: "AkzidenzGrotesk";
+  font-weight: 400;
+   -webkit-font-smoothing: subpixel-antialiased;
 }
 @-webkit-keyframes grow {
     0%{
@@ -33,7 +35,7 @@
     font-size: 19px; 
     width: 309px; 
     height: 305px; 
-    left: 714px; 
+    left: 711px; 
     background: url(../images/pi_launch.png); 
     background-repeat: no-repeat;
     z-index: 3;
@@ -45,18 +47,18 @@ header {
 }
 #questions {
     position: fixed;
-    width: 380px;
+    width: 500px;
     color: white;
-    left: 649px;
-    top: 10px;
+    left: 505px;
+    top: 45px;
     line-height: 1;
 }
-#question_counter{
+/*#question_counter{
     position: fixed;
     top: 100px;
     left: 550px;
     color: white;
-}
+}*/
 #app{
     background: url(../images/seek_find_welcome.png);
     background-repeat: no-repeat;
@@ -67,7 +69,6 @@ header {
 #point {
     position: fixed;
     color: white;
-    font-weight: 400;
     top: 146px;
     left: 814px;
     width: 60px;
@@ -80,6 +81,7 @@ header {
     display: none;
     font-size: 50px;
     width: 150px;
+    color:rgb(133, 133, 133);
 }
 #correct_count{
     display: none;
@@ -88,6 +90,7 @@ header {
     width: 30px;
     left: 134px;
     font-size: 50px;
+    color: rgb(133, 133, 133);
 }
 #time_remaining{
     position: relative;
@@ -96,6 +99,7 @@ header {
     font-size: 50px;
     width: 150px;
     display: none;
+    color: rgb(133, 133, 133);
 }
 #time_bonus{
     position: relative;
@@ -103,6 +107,7 @@ header {
     left: 850px;
     font-size: 50px;
     width: 150px;
+    color: rgb(133, 133, 133);
 }
 #total{
     position: relative;
@@ -111,11 +116,11 @@ header {
     font-size: 50px;
     width: 150px;
     display: none;
+    color: rgb(133,133,133);
 }
 #timer {
     position: fixed;
     color: white;
-    font-weight: 400;
     top: 146px;
     left: 945px;
     width: 60px;
@@ -139,6 +144,7 @@ img[alt="mirra"]{
     top: 169px;
     overflow: scroll;
     height: 570px;
+    -webkit-overflow-scrolling: touch;
 }
 #resource img{
     width: 100%;
@@ -585,7 +591,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi14_tp1_inc"]{
     position: absolute;
-    top: 17781px;
+    top: 17681px;
     left: 96px;
     width: 875px;
     display: none;
@@ -598,7 +604,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi15_tp1_inc"]{
     position: absolute;
-    top: 18753px;
+    top: 18733px;
     left: 96px;
     width: 875px;
     display: none;
@@ -611,7 +617,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi17_tp1_inc"]{
     position: absolute;
-    top: 21853px;
+    top: 21833px;
     left: 105px;
     width: 855px;
     display: none;
@@ -625,7 +631,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi18_tp1_inc"]{
     position: absolute;
-    top: 22741px;
+    top: 22721px;
     left: 105px;
     width: 855px;
     height: 1072px;
@@ -639,7 +645,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi19_tp1_inc"]{
     position: absolute;
-    top: 24809px;
+    top: 24789px;
     left: 105px;
     width: 855px;
     display: none;
@@ -653,7 +659,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi20_tp1_inc"]{
     position: absolute;
-    top: 25809px;
+    top: 25789px;
     left: 98px;
     width: 866px;
     height: 550px;
@@ -668,7 +674,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi21_tp1_inc"]{
     position: absolute;
-    top: 26808px;
+    top: 26782px;
     left: 105px;
     width: 854px;
     height: 224px;
