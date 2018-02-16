@@ -1,6 +1,6 @@
 * {
   font-family: "AkzidenzGrotesk";
-  font-weight: 400;
+  font-weight: 900;
    -webkit-font-smoothing: subpixel-antialiased;
 }
 @-webkit-keyframes grow {
@@ -585,7 +585,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi14_tp1_c"]{
     position: absolute;
-    top: 17781px;
+    top: 17681px;
     left: 96px;
     width: 875px;
 }
@@ -598,7 +598,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi15_tp1_c"]{
     position: absolute;
-    top: 18753px;
+    top: 18733px;
     left: 96px;
     width: 875px;
 }
@@ -611,7 +611,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi17_tp1_c"]{
     position: absolute;
-    top: 21853px;
+    top: 21833px;
     left: 105px;
     width: 855px;
 }
@@ -624,7 +624,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi18_tp1_c"]{
     position: absolute;
-    top: 22741px;
+    top: 22721px;
     left: 105px;
     width: 855px;
     height: 1072px;
@@ -639,7 +639,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi19_tp1_c"]{
     position: absolute;
-    top: 24809px;
+    top: 24789px;
     left: 105px;
     width: 855px;
 }
@@ -652,7 +652,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi20_tp1_c"]{
     position: absolute;
-    top: 25809px;
+    top: 25789px;
     left: 98px;
     width: 866px;
     height: 550px;
@@ -667,7 +667,7 @@ img[alt="mirra"]{
 }
 #resource img[alt="pi21_tp1_c"]{
     position: absolute;
-    top: 26808px;
+    top: 26784px;
     left: 105px;
     width: 854px;
     height: 224px;
