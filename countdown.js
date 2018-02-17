@@ -1,4 +1,5 @@
 var play_again = false;
+var challenge = false;
 function timer() {
   var timer2 = $("#timer").text();
   var interval = setInterval(function() {
@@ -19,7 +20,7 @@ function timer() {
   };
 
   if ( (seconds <= 0) && (minutes <= 0) || ($("#correct_count").text() == 15)){
-    congrats(interval, seconds);
+    congrats(interval, seconds,minutes);
     if(!play_again){
       saveActivity();
     }
@@ -30,7 +31,7 @@ function timer() {
 }, 1000);
 } 
 
-function congrats(interval, seconds){
+function congrats(interval, seconds,minutes){
     clearInterval(interval);
     $point = $("#point").text();
     $("#app").css('background-image',"url('images/congrats.png')");
@@ -45,13 +46,18 @@ function congrats(interval, seconds){
     localStorage.setItem("time_remaining",$("#timer").text());
 
     $("footer").html("<div class='play_again_footer'><img src='images/Buttons/play_again.png' class='play_again'></div>").css("display","inherit");
-    if(seconds>0){
-      $("#time_bonus").html(seconds*100);
-      localStorage.setItem("time_bonus", $("#time_bonus").html(seconds*100));
+    
+    if(seconds>0 || minutes >0 ){ 
+      var bonus = seconds*100 + minutes*100*60;
+      console.log(bonus);
+      $("#time_bonus").html(bonus);
+      localStorage.setItem("time_bonus", bonus);
     }else{$("#time_bonus").html("0")}
+    
     var total = parseInt($("#time_bonus").text())+parseInt($("#final_point").text());
     $("#total").html(total);
-    localStorage.setItem("total", total)
+    localStorage.setItem("total", total);
+    challenge = true;
   }
 
   $("footer").on('click', '.play_again', function(){

@@ -385,6 +385,7 @@ $(document).ready(function(){
       $footer.css('display', 'inherit');
       $("#next_question").remove();
       correct_count++;
+      console.log(correct_count);
       $("#correct_count").html(correct_count);
       localStorage.setItem("correct_count", correct_count);
       $footer.html("<img src='images/Screens/correct_datapoint.png'><img src='images/Buttons/load_next_scenario.png' class = 'load_next_scenario'>");

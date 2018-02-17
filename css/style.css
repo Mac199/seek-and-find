@@ -50,7 +50,7 @@ header {
     width: 500px;
     color: white;
     left: 505px;
-    top: 45px;
+    top: 36px;
     line-height: 1;
 }
 /*#question_counter{
@@ -77,37 +77,41 @@ header {
 #final_point{
     position: relative;
     top: 430px;
-    left: 350px;
+    left: 324px;
     display: none;
     font-size: 50px;
     width: 150px;
     color:rgb(133, 133, 133);
+    text-align: center;
 }
 #correct_count{
     display: none;
     position: relative;
     top: 494px;
-    width: 30px;
-    left: 134px;
+    width: 130px;
+    left: 84px;
     font-size: 50px;
     color: rgb(133, 133, 133);
+    text-align: center;
 }
 #time_remaining{
     position: relative;
     top: 364px;
-    left: 590px;
+    left: 574px;
     font-size: 50px;
     width: 150px;
     display: none;
     color: rgb(133, 133, 133);
+    text-align: center;
 }
 #time_bonus{
     position: relative;
     top: 300px;
-    left: 850px;
+    left: 815px;
     font-size: 50px;
     width: 150px;
     color: rgb(133, 133, 133);
+    text-align: center;
 }
 #total{
     position: relative;

@@ -1,40 +1,46 @@
+window.addEventListener('online', function(event){
+    console.log("you are back online");
+    console.log(challenge);
+    if(challenge){
+      saveActivity();
+    }
+    
+});
+if(localStorage.getItem("total")!=null){
+  saveActivity();
+}
 function saveActivity(){
-  if(navigator.onLine){
-    //if localstorage has data
-      //foreach in localstorage
-        //$.post API call
-          //callback remove from localstorage
-    var data = {};
-    if(localStorage.getItem("time_bonus") != null){
-      data.time_bonus = localStorage.getItem("time_bonus");
-      localStorage.removeItem("time_bonus");
-    }
-    if(localStorage.getItem("total")!=null ){
-      data.total = localStorage.getItem("total");
-      localStorage.removeItem("total");
-    }
-    if(localStorage.getItem("time")!=null ){
-      data.time = localStorage.getItem("time");
-      localStorage.removeItem("time");
-    }
-    if(localStorage.getItem("correct_count")!=null ){
-      data.correct_count = localStorage.getItem("correct_count");
-      localStorage.removeItem("correct_count");
-    }
-    if(localStorage.getItem("scenario")!=null ){
-      data.scenario = localStorage.getItem("scenario");
-      localStorage.removeItem("scenario");
-    }
-    if(localStorage.getItem("time_remaining")!=null ){
-      data.time_remaining = localStorage.getItem("time_remaining");
-      localStorage.removeItem("time_remaining");
-    }
-    sendReportToServer(data.total,data.scenario,data.time_remaining,data.time,data.time_bonus);
+  //if localstorage has data
+    //foreach in localstorage
+      //$.post API call
+        //callback remove from localstorage
+  var data = {};
+  // if(localStorage.getItem("time_bonus") != null){
+  //   data.time_bonus = localStorage.getItem("time_bonus");
+    
+  // }
+  if(localStorage.getItem("total")!=null ){
+    data.total = localStorage.getItem("total");
+    console.log(data.total);
   }
+  // if(localStorage.getItem("time")!=null ){
+  //   data.time = localStorage.getItem("time");
+  // }
+  // if(localStorage.getItem("correct_count")!=null ){
+  //   data.correct_count = localStorage.getItem("correct_count");
+    
+  // }
+  if(localStorage.getItem("scenario")!=null ){
+    data.scenario = localStorage.getItem("scenario");  
+    console.log(data.scenario); 
+  }
+  if(localStorage.getItem("time_remaining")!=null ){
+    data.time_remaining = localStorage.getItem("time_remaining");
+  }
+  sendReportToServer(data.total,data.scenario);
 }
 
-
-function sendReportToServer(score,scenario,time_remaining,time,time_bonus){
+function sendReportToServer(score,scenario){
     var localInfo = $.parseJSON(currentJSONString);
     var eventID = localInfo.TTInfoDictionary.TTInfo[0][1];
     var userID = localInfo.TTInfoDictionary.TTInfo[1][1];
@@ -45,11 +51,12 @@ function sendReportToServer(score,scenario,time_remaining,time,time_bonus){
                 event_id: eventID,       
                 score: score,
                 question_id:scenario,
-                time_remaining:time_remaining,
-                time:time,
-                time_bonus:time_bonus
             }, function(data){
-
+            localStorage.removeItem("total");
+            localStorage.removeItem("scenario");
+            localStorage.removeItem("time_remaining");
+            localStorage.removeItem("correct_count");
+            localStorage.removeItem("time_bonus");
             console.log('====== Successfully Reported ========', scenario, score);
             
         })
@@ -57,6 +64,5 @@ function sendReportToServer(score,scenario,time_remaining,time,time_bonus){
                 console.log('+++++++++ Error reporting testing result +++++');
             });
 }
-
 
 
