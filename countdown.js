@@ -1,5 +1,6 @@
 var play_again = false;
 var challenge = false;
+
 function timer() {
   var timer2 = $("#timer").text();
   var interval = setInterval(function() {
@@ -21,7 +22,7 @@ function timer() {
 
   if ( (seconds <= 0) && (minutes <= 0) || ($("#correct_count").text() == 15)){
     congrats(interval, seconds,minutes);
-    if(!play_again){
+    if( !play_again && (localStorage.getItem("finish") == null) ){
       saveActivity();
     }
     
@@ -58,6 +59,7 @@ function congrats(interval, seconds,minutes){
     $("#total").html(total);
     localStorage.setItem("total", total);
     challenge = true;
+    localStorage.setItem("challenge", challenge);
   }
 
   $("footer").on('click', '.play_again', function(){

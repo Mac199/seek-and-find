@@ -4,9 +4,9 @@ window.addEventListener('online', function(event){
     if(challenge){
       saveActivity();
     }
-    
 });
 if(localStorage.getItem("total")!=null){
+  console.log("total is not null");
   saveActivity();
 }
 function saveActivity(){
@@ -15,21 +15,12 @@ function saveActivity(){
       //$.post API call
         //callback remove from localstorage
   var data = {};
-  // if(localStorage.getItem("time_bonus") != null){
-  //   data.time_bonus = localStorage.getItem("time_bonus");
-    
-  // }
+
   if(localStorage.getItem("total")!=null ){
     data.total = localStorage.getItem("total");
     console.log(data.total);
   }
-  // if(localStorage.getItem("time")!=null ){
-  //   data.time = localStorage.getItem("time");
-  // }
-  // if(localStorage.getItem("correct_count")!=null ){
-  //   data.correct_count = localStorage.getItem("correct_count");
-    
-  // }
+
   if(localStorage.getItem("scenario")!=null ){
     data.scenario = localStorage.getItem("scenario");  
     console.log(data.scenario); 
@@ -57,6 +48,10 @@ function sendReportToServer(score,scenario){
             localStorage.removeItem("time_remaining");
             localStorage.removeItem("correct_count");
             localStorage.removeItem("time_bonus");
+            localStorage.removeItem("points");
+            localStorage.removeItem("time");
+            var finish = true;
+            localStorage.setItem("finish", finish);
             console.log('====== Successfully Reported ========', scenario, score);
             
         })
